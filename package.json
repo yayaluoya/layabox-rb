@@ -1,0 +1,32 @@
+{
+  "name": "layabox-rb",
+  "version": "1.0.0",
+  "description": "对layabox项目依赖的所有资源进行打包处理，主要是剔除项目没有依赖的资源和对部分资源进行额外处理，比如说压缩图片。",
+  "main": "index.js",
+  "bin": {
+    "layabox-rb": "./bin/index.js",
+    "lrb": "./bin/index.js"
+  },
+  "scripts": {
+    "ts-build": "tsc -w",
+    "test": "node ./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yayaluoya/layabox-rb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yayaluoya/layabox-rb/issues"
+  },
+  "homepage": "https://github.com/yayaluoya/layabox-rb#readme",
+  "dependencies": {
+    "@types/node": "^15.0.3",
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0",
+    "internal-ip": "^6.2.0",
+    "mime": "^2.5.2",
+    "portfinder": "^1.0.28"
+  }
+}
