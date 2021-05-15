@@ -15,6 +15,11 @@ var MainConfig_1 = __importDefault(require("../config/MainConfig"));
 var LoaderManager = /** @class */ (function () {
     function LoaderManager() {
     }
+    /**
+     * 创建一个loader线，回依次执行loader列表中的loader并返回一个可读流
+     * @param _url 资源路径
+     * @param _stream 资源可读流
+     */
     LoaderManager.createLoader = function (_url, _stream) {
         var _loaders = __spreadArray([], MainConfig_1.default.config.loader);
         return new Promise(function (r, e) {
@@ -25,11 +30,15 @@ var LoaderManager = /** @class */ (function () {
                 }
                 var _loader = _loaders.shift();
                 _loader.loader(_url, _stream)
-                    .then()
+                    .then(function (__stream) {
+                    _f(__stream);
+                })
                     .catch(function (e) {
-                    console.log(_loader.name + "\u51FA\u9519\u4E86\u3002");
-                    console.log(e);
-                    r(_stream);
+                    var _error = {
+                        name: _loader.name,
+                        error: e,
+                    };
+                    e(_error);
                 });
             };
             //

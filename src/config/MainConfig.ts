@@ -56,7 +56,7 @@ export interface ILoader {
     /**
      * loader
      * @param _url 资源地址
-     * @param _stream 资源可读流
+     * @param _stream 资源暂停模式的可读流，传出的可读取也必须是暂停模式，不然异步会丢失数据
      */
     loader(_url: string, _stream: fs.ReadStream): Promise<fs.ReadStream>;
 }

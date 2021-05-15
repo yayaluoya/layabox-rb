@@ -28,5 +28,8 @@
     "internal-ip": "^6.2.0",
     "mime": "^2.5.2",
     "portfinder": "^1.0.28"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
   }
 }
